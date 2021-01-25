@@ -18,6 +18,11 @@ class SlingShot{
         this.sling.bodyA = null;
     }
 
+    return(body)
+    {
+        this.sling.bodyA = body;
+    }
+
     display(){
         if(this.sling.bodyA){
             var pointA = this.sling.bodyA.position;
