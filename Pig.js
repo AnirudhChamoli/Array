@@ -18,6 +18,6 @@ class Pig extends BaseClass {
       this.visibility = this.visibility - 5;
       pop();
     }
-    console.log(this.body.speed)
+   // console.log(this.body.speed)
   }
 };
