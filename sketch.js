@@ -1,3 +1,38 @@
+var num = 20;
+console.log(num);
+
+var name = "Anirudh";
+console.log(name);
+
+var bool = true;
+console.log(bool);
+
+var object;
+console.log(object);
+
+object = null;
+console.log(null);
+
+var arr1 = [10,20,30,40,50];
+console.log(arr1);
+console.log(arr1.length);
+console.log(arr1[4]);
+
+var arr2 = [11, "Hello", false, num, name];
+console.log(arr2);
+
+var arr3 = [[2,4,6,8], [1,3,5,7,9], [10,20,30,40]]
+console.log(arr3);
+console.log(arr3[1][3]);
+
+arr2.push(40);
+console.log(arr2);
+
+arr1.pop();
+console.log(arr1);
+
+var Gamestate = "Start"
+
 const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
@@ -67,17 +102,22 @@ function draw(){
     slingshot.display();    
 }
 
+
 function mouseDragged(){
-    Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
+    if (Gamestate === "Start")
+    {
+        Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
+    }
 }
 
 function mouseReleased(){
     slingshot.fly();
+    Gamestate = "Launched"
 }
 
 function keyPressed()
 {
     if (keyCode === 32){
-        slingshot.return(bird.body);
+      //  slingshot.return(bird.body);
     }
 }
